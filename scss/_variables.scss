@@ -4,18 +4,24 @@ $secondary-color: #000;
 $tertiary-color: #fff;
 $gray-color: #ddd;
 $light-gray-color: #f9f9f9;
-$text-color: #333333;
+$text-color: #fff;
 $text-light-color: #525252;
 
 // Layout sizes
 $max-width: 1440px;
 
+$bp-landscape: 667px;
 $bp-tablet: 768px;
 $bp-desktop: 1024px;
 $bp-big-desktop: 1280px;
 $bp-very-big-desktop: $max-width;
 
 // Breakpoints
+@mixin landscape-up {
+  @media (min-width: $bp-landscape) {
+    @content;
+  }
+}
 @mixin tablet-up {
   @media (min-width: $bp-tablet) {
     @content;

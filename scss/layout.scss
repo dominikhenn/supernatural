@@ -48,6 +48,12 @@ h2 {
     }
 }
 
+h3 {
+    text-shadow: 1px 1px 2px orangered;
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
 img {
     display: block;
     max-width: 100%;
@@ -132,6 +138,10 @@ img {
     opacity: 0;
     transition: opacity 1s ease-in-out;
 
+    @include landscape-up {
+        height: calc(100vh - 100px - 164px);
+    }
+
     @include tablet-up {
         height: calc(100vh - 120px - 164px);
     }
@@ -150,12 +160,52 @@ img {
         margin-left: 115px;
     }
 
+    &__details-container {
+        position: relative;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+
+        .member__close-btn {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            border: 1px solid transparent;
+            background: none;
+            cursor: pointer;
+            color: #fff;
+            z-index: 4;
+
+            svg {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+
+    &__details {
+        display: none;
+        width: 45vw;
+        max-width: 720px;
+        position: absolute;
+        right: 0;
+        top: calc(50vh - 105px - 153px + 60px);
+
+        @include landscape-up {
+            top: calc(50vh - 105px - 153px + 80px);
+        }
+
+        @include tablet-up {
+            top: calc(50vh - 105px - 153px + 10px);
+        }
+    }
+
     &__img {
         height: 250px;
         position: absolute;
         top: calc(50vh - 105px - 153px);
         left: 0;
-        transition: left 3s ease-in-out;
+        opacity: 1;
+        transition: left 3s ease-in-out, opacity 1s ease-in-out;
 
         &.d {
             left: 30px;
@@ -171,6 +221,10 @@ img {
 
         &.j {
             left: -10px;
+        }
+
+        @include landscape-up {
+            top: calc(50vh - 100px - 164px);
         }
 
         @include tablet-up {
@@ -266,6 +320,18 @@ img {
     opacity: 0;
     transition: opacity 3s 2s ease-in-out;
 
+    h2 {
+        cursor: pointer;
+
+        &:hover {
+            text-shadow: 2px 2px 5px $tertiary-color;
+        }
+    }
+
+    @include landscape-up {
+        height: 120px;
+    }
+
     @include tablet-up {
         height: 120px;
     }
@@ -305,6 +371,26 @@ img {
 
         &.j {
             left: 20px;
+        }
+
+        @include landscape-up {
+            &.d {
+                top: 0;
+                left: 500px;
+            }
+
+            &.a {
+                left: 302px;
+            }
+
+            &.c {
+                top: 0;
+                left: 148px;
+            }
+
+            &.j {
+                left: 25px;
+            }
         }
 
         @include tablet-up {
@@ -415,6 +501,24 @@ img {
             left: -10px;
         }
 
+        @include landscape-up {
+            &.d {
+                left: 374px;
+            }
+
+            &.a {
+                left: 281px;
+            }
+
+            &.c {
+                left: 119px;
+            }
+
+            &.j {
+                left: 0;
+            }
+        }
+
         @include tablet-up {
             &.d {
                 left: 389px;
@@ -492,5 +596,70 @@ img {
 .on {
     .logo img {
         opacity: 1;
+    }
+}
+
+.show-member {
+    .member__img.j,
+    .member__img.c,
+    .member__img.a,
+    .member__img.d {
+        left: 0;
+
+        @include tablet-up {
+            left: 20px;
+        };
+    }
+
+    .member__details-container {
+        opacity: 1;
+    }
+
+    &.j {
+        .member__details.j {
+            display: block;
+        }
+
+        .member__img.c,
+        .member__img.a,
+        .member__img.d {
+            opacity: 0;
+        }
+    }
+
+    &.c {
+        .member__details.c {
+            display: block;
+        }
+
+        .member__img.j,
+        .member__img.a,
+        .member__img.d {
+            opacity: 0;
+        }
+    }
+
+    &.a {
+        .member__details.a {
+            display: block;
+        }
+
+        .member__img.j,
+        .member__img.c,
+        .member__img.d {
+            opacity: 0;
+        }
+    }
+
+    &.d {
+        .member__details.d {
+            display: block;
+        }
+
+        .member__img.j,
+        .member__img.c,
+        .member__img.a {
+            opacity: 0;
+        }
     }
 }
