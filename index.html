@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta data-react-helmet="true" name="viewport" content="width=device-width, maximum-scale=5, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+    <title>Supernatural Music</title>
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+    <link href="css/layout.min.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div id="bg" class="bg">
+        <img alt="Thunderstorm" src="img/thunderstorm.jpg" />
+    </div>
+    <div class="social">
+        <a href="https://www.facebook.com/supernaturalmusicband/" rel="noopener" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="266.893px" height="266.895px" viewBox="0 0 266.893 266.895" enable-background="new 0 0 266.893 266.895" xml:space="preserve">
+                <title>Supernatural Facebook Channel</title>
+                <path id="Blue_1_" fill="#3C5A99" d="M248.082,262.307c7.854,0,14.223-6.369,14.223-14.225V18.812  c0-7.857-6.368-14.224-14.223-14.224H18.812c-7.857,0-14.224,6.367-14.224,14.224v229.27c0,7.855,6.366,14.225,14.224,14.225  H248.082z"/>
+                <path id="f" fill="#FFFFFF" d="M182.409,262.307v-99.803h33.499l5.016-38.895h-38.515V98.777c0-11.261,3.127-18.935,19.275-18.935  l20.596-0.009V45.045c-3.562-0.474-15.788-1.533-30.012-1.533c-29.695,0-50.025,18.126-50.025,51.413v28.684h-33.585v38.895h33.585  v99.803H182.409z"/>
+            </svg>
+        </a>
+    </div>
+    <div id="content" class="container">
+        <div class="logo">
+            <h1 class="hidden">Supernatural Music</h1>
+            <img alt="Logo" src="img/sn-logo.png" />
+        </div>
+        <div class="member">
+            <img class="member__img d" alt="Dom" src="img/dom.png">
+            <img class="member__img a" alt="Andre" src="img/andre.png">
+            <img class="member__img c" alt="Carsten" src="img/carsten.png">
+            <img class="member__img j" alt="Jay" src="img/jaycomic.png">
+        </div>
+        <div class="names">
+            <h2 class="names__name j">Jay</h2>
+            <h2 class="names__name c">Caba</h2>
+            <h2 class="names__name a">Andre</h2>
+            <h2 class="names__name d">Dom</h2>
+        </div>
+    </div>
+    <script type="text/javascript">
+      function ready(fn) {
+        if (document.readyState !== 'loading'){
+          fn();
+        } else {
+          document.addEventListener('DOMContentLoaded', fn);
+        }
+      }
+
+      function thunderstorm() {
+        document.getElementById('bg').classList.add('on');
+
+        window.setTimeout(function () {
+          document.getElementById('bg').classList.remove('on');
+
+          window.setTimeout(function () {
+            document.getElementById('bg').classList.add('on');
+
+            window.setTimeout(function () {
+              document.getElementById('bg').classList.remove('on');
+
+              window.setTimeout(function () {
+                document.getElementById('bg').classList.add('on-long');
+
+                window.setTimeout(function () {
+                  document.getElementById('bg').classList.remove('on-long');
+                }, 500);
+              }, 100);
+            }, 100);
+          }, 100);
+        }, 100);
+      }
+
+      ready(function () {
+        window.setTimeout(function () {
+          document.getElementById('content').classList.add('on');
+
+          window.setTimeout(function () {
+            document.getElementById('content').classList.remove('on');
+
+            window.setTimeout(function () {
+              document.getElementById('content').classList.add('on');
+
+              window.setTimeout(function () {
+                document.getElementById('content').classList.remove('on');
+
+                window.setTimeout(function () {
+                  document.getElementById('content').classList.add('on');
+
+                  window.setTimeout(function () {
+                    document.getElementById('content').classList.remove('on');
+
+                    window.setTimeout(function () {
+                      document.getElementById('content').classList.add('on');
+                    }, 50);
+                  }, 50);
+                }, 50);
+              }, 50);
+            }, 50);
+          }, 50);
+        }, 1500);
+
+        window.setTimeout(function () {
+          thunderstorm();
+        }, 5000);
+
+        window.setInterval(function () {
+          thunderstorm();
+        }, 20000);
+
+        window.setTimeout(function () {
+          document.getElementById('content').classList.add('loaded');
+        }, 100);
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+// Colors
+$primary-color: #770000;
+$secondary-color: #000;
+$tertiary-color: #fff;
+$gray-color: #ddd;
+$light-gray-color: #f9f9f9;
+$text-color: #333333;
+$text-light-color: #525252;
+
+// Layout sizes
+$max-width: 1440px;
+
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+$bp-big-desktop: 1280px;
+$bp-very-big-desktop: $max-width;
+
+// Breakpoints
+@mixin tablet-up {
+  @media (min-width: $bp-tablet) {
+    @content;
+  }
+}
+@mixin desktop-up {
+  @media (min-width: $bp-desktop) {
+    @content;
+  }
+}
+@mixin big-desktop-up {
+  @media (min-width: $bp-big-desktop) {
+    @content;
+  }
+}
+@mixin very-big-desktop-up {
+  @media (min-width: $bp-very-big-desktop) {
+    @content;
+  }
+}

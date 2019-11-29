@@ -1,0 +1,496 @@
+@import './variables';
+@import './_fonts';
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 18px;
+    text-rendering: optimizeLegibility;
+    background: $secondary-color;
+    color: $text-color;
+}
+
+a,
+a:visited,
+a:active {
+    color: $primary-color;
+}
+
+ul, ol {
+    margin: 0;
+    padding-left: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin-top: 0;
+}
+
+h2 {
+    font-family: "Mr Dafoe", sans-serif;
+    color: $primary-color;
+    font-size: 60px;
+    text-shadow: 1px 1px 2px $tertiary-color;
+
+    @include desktop-up {
+        font-size: 80px;
+    }
+
+    @include big-desktop-up {
+        font-size: 90px;
+    }
+
+    @include very-big-desktop-up {
+        font-size: 110px;
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 0 none;
+}
+
+.hidden {
+    display: none;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 30ms ease-out;
+
+    &.on {
+        opacity: 0.5;
+    }
+
+    &.on-long {
+        opacity: 0.8;
+        transition: opacity 30ms ease-in, 500ms ease-out;
+    }
+
+    img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        font-family: 'object-fit: cover';
+    }
+}
+
+.social {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    svg {
+        height: 30px;
+        width: 30px;
+        margin: 16px 16px 16px 0;
+    }
+}
+
+.container {
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 16px;
+    z-index: 1;
+
+    &--no-padding {
+        padding: 0;
+    }
+}
+
+.logo {
+    margin: 50px 0 0 0;
+
+    @include very-big-desktop-up {
+        margin: 100px 0 0 0;
+    }
+
+    img {
+        margin: 0 auto;
+        opacity: 0;
+        transition: opacity 50ms ease-in-out;
+        z-index: 2;
+        position: relative;
+    }
+}
+
+.member {
+    position: relative;
+    height: calc(100vh - 145px - 153px);
+    margin-left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+    @include tablet-up {
+        height: calc(100vh - 120px - 164px);
+    }
+
+    @include desktop-up {
+        height: calc(100vh - 160px - 194px);
+    }
+
+    @include big-desktop-up {
+        height: calc(100vh - 160px - 194px);
+        margin-left: 75px;
+    }
+
+    @include very-big-desktop-up {
+        height: calc(100vh - 180px - 304px);
+        margin-left: 115px;
+    }
+
+    &__img {
+        height: 250px;
+        position: absolute;
+        top: calc(50vh - 105px - 153px);
+        left: 0;
+        transition: left 3s ease-in-out;
+
+        &.d {
+            left: 30px;
+        }
+
+        &.a {
+            left: 20px;
+        }
+
+        &.c {
+            left: 0;
+        }
+
+        &.j {
+            left: -10px;
+        }
+
+        @include tablet-up {
+            top: calc(50vh - 120px - 200px);
+            height: 350px;
+
+            &.d {
+                left: 160px;
+            }
+
+            &.a {
+                left: 120px;
+            }
+
+            &.c {
+                left: 31px;
+            }
+
+            &.j {
+                left: 0;
+            }
+        }
+
+        @include desktop-up {
+            top: calc(50vh - 180px - 194px);
+            height: 400px;
+
+            &.d {
+                left: 170px;
+            }
+
+            &.a {
+                left: 150px;
+            }
+
+            &.c {
+                left: 48px;
+            }
+
+            &.j {
+                left: 0;
+            }
+        }
+
+        @include big-desktop-up {
+            top: calc(50vh - 200px - 194px);
+            height: 450px;
+
+            &.d {
+                left: 180px;
+            }
+
+            &.a {
+                left: 161px;
+            }
+
+            &.c {
+                left: 48px;
+            }
+
+            &.j {
+                left: 0;
+            }
+        }
+
+        @include very-big-desktop-up {
+            top: calc(50vh - 180px - 304px);
+            height: 500px;
+
+            &.d {
+                left: 170px;
+            }
+
+            &.a {
+                left: 150px;
+            }
+
+            &.c {
+                left: 59px;
+            }
+
+            &.j {
+                left: 0;
+            }
+        }
+    }
+}
+
+.names {
+    position: relative;
+    height: 165px;
+    margin-left: 0;
+    opacity: 0;
+    transition: opacity 3s 2s ease-in-out;
+
+    @include tablet-up {
+        height: 120px;
+    }
+
+    @include desktop-up {
+        height: 160px;
+    }
+
+    @include big-desktop-up {
+        margin-left: 75px;
+        height: 180px;
+    }
+
+    @include very-big-desktop-up {
+        margin-left: 125px;
+    }
+
+    &__name {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-bottom: 0;
+
+        &.d {
+            top: 80px;
+            left: 209px;
+        }
+
+        &.a {
+            left: 145px;
+        }
+
+        &.c {
+            top: 80px;
+            left: 52px;
+        }
+
+        &.j {
+            left: 20px;
+        }
+
+        @include tablet-up {
+            &.d {
+                top: 0;
+                left: 576px;
+            }
+
+            &.a {
+                left: 376px;
+            }
+
+            &.c {
+                top: 0;
+                left: 195px;
+            }
+
+            &.j {
+                left: 52px;
+            }
+        }
+
+        @include desktop-up {
+            &.d {
+                top: 0;
+                left: 785px;
+            }
+
+            &.a {
+                left: 513px;
+            }
+
+            &.c {
+                top: 0;
+                left: 267px;
+            }
+
+            &.j {
+                left: 52px;
+            }
+        }
+
+        @include big-desktop-up {
+            &.d {
+                top: 0;
+                left: 865px;
+            }
+
+            &.a {
+                left: 558px;
+            }
+
+            &.c {
+                top: 0;
+                left: 284px;
+            }
+
+            &.j {
+                left: 70px;
+            }
+        }
+
+        @include very-big-desktop-up {
+            &.d {
+                top: 0;
+                left: 956px;
+            }
+
+            &.a {
+                left: 600px;
+            }
+
+            &.c {
+                top: 0;
+                left: 300px;
+            }
+
+            &.j {
+                left: 52px;
+            }
+        }
+    }
+}
+
+.loaded {
+    .names {
+        opacity: 1;
+    }
+
+    .member {
+        opacity: 1;
+    }
+
+    .member__img {
+        &.d {
+            left: 138px;
+        }
+
+        &.a {
+            left: 100px;
+        }
+
+        &.c {
+            left: 24px;
+        }
+
+        &.j {
+            left: -10px;
+        }
+
+        @include tablet-up {
+            &.d {
+                left: 389px;
+            }
+
+            &.a {
+                left: 294px;
+            }
+
+            &.c {
+                left: 124px;
+            }
+
+            &.j {
+                left: 10px;
+            }
+        }
+
+        @include desktop-up {
+            &.d {
+                left: 564px;
+            }
+
+            &.a {
+                left: 423px;
+            }
+
+            &.c {
+                left: 182px;
+            }
+
+            &.j {
+                left: 18px;
+            }
+        }
+
+        @include big-desktop-up {
+            &.d {
+                left: 630px;
+            }
+
+            &.a {
+                left: 468px;
+            }
+
+            &.c {
+                left: 203px;
+            }
+
+            &.j {
+                left: 10px;
+            }
+        }
+
+        @include very-big-desktop-up {
+            &.d {
+                left: 673px;
+            }
+
+            &.a {
+                left: 483px;
+            }
+
+            &.c {
+                left: 200px;
+            }
+
+            &.j {
+                left: 10px;
+            }
+        }
+    }
+}
+
+.on {
+    .logo img {
+        opacity: 1;
+    }
+}

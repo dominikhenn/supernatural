@@ -1,0 +1,16 @@
+{
+  "name": "supernatural",
+  "version": "1.0.0",
+  "description": "Landingpage",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node-sass --include-path scss scss/layout.scss css/layout.min.css --output-style compressed",
+    "watch": "nodemon -e scss -x \"npm run build\""
+  },
+  "author": "Dominik Henn",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1"
+  }
+}
