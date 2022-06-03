@@ -1,0 +1,67 @@
+.content-overlay {
+    position: fixed;
+    top: 110px;
+    right: 0;
+    height: 100%;
+    width: 100vw;
+    z-index: 39;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: transform 250ms ease-in-out;
+    transform: translateX(100%);
+    border-top: 1px solid $tertiary-color;
+
+    @include landscape-up {
+        top: 145px;
+    }
+
+    @include tablet-up {
+        top: 165px;
+    }
+
+    @include desktop-up {
+        top: 185px;
+    }
+
+    @include very-big-desktop-up {
+        top: 235px;
+    }
+
+    &--active {
+        transform: translateX(0);
+    }
+
+    &__entry {
+        display: none;
+        padding: 20px;
+        color: $tertiary-color;
+        overflow-y: scroll;
+        height: calc(100% - 120px);
+        @include hide-scrollbars;
+
+        @include landscape-up {
+            height: calc(100% - 155px);
+        }
+
+        @include tablet-up {
+            height: calc(100% - 175px);
+        }
+
+        @include desktop-up {
+            height: calc(100% - 195px);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @include very-big-desktop-up {
+            height: calc(100% - 245px);
+        }
+
+        a, a:visited, a:active {
+            color: $tertiary-color;
+        }
+
+        &--active {
+            display: block;
+        }
+    }
+}

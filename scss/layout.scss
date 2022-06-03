@@ -1,5 +1,7 @@
 @import './variables';
 @import './_fonts';
+@import './components/menu';
+@import './components/content-overlay';
 
 *, *::before, *::after {
     box-sizing: inherit;
