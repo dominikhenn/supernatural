@@ -83,6 +83,7 @@ img {
     z-index: -1;
     opacity: 0;
     transition: opacity 30ms ease-out;
+    width: 100%;
 
     &.on {
         opacity: 0.5;
