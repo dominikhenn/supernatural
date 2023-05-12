@@ -15,6 +15,7 @@ body {
     background: $secondary-color;
     color: $text-color;
     position: fixed;
+    height: 100%;
 
     @include desktop-up {
         position: initial;
@@ -115,6 +116,44 @@ img {
     }
 }
 
+.contact-icon {
+    z-index: 1;
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    cursor: pointer;
+    overflow: hidden;
+
+    @include desktop-up {
+        bottom: calc(50dvh - 57px);
+    }
+
+    img {
+        height: 70px;
+        transition: right ease-in-out 400ms;
+        position: relative;
+        right: -70px;
+
+        @include tablet-up {
+            height: 114px;
+        }
+    }
+
+    &--visible {
+        img {
+            right: -12px;
+
+            @include tablet-up {
+                right: -18px;
+            }
+
+            &:hover {
+                right: 0;
+            }
+        }
+    }
+}
+
 .container {
     max-width: $max-width;
     margin-left: auto;
@@ -134,12 +173,20 @@ img {
         margin: 100px 0 0 0;
     }
 
+    @media (max-height: 415px)  {
+        width: calc(100dvw - 32px);
+    }
+
     img {
         margin: 0 auto;
         opacity: 0;
         transition: opacity 50ms ease-in-out;
         z-index: 2;
         position: relative;
+        
+        @media (max-height: 415px)  {
+            height: 50px;
+        }
     }
 }
 
@@ -770,6 +817,40 @@ img {
         .member__img.a,
         .member__img.b {
             opacity: 0;
+        }
+    }
+}
+
+.gallery-detail {
+    z-index: 1981;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.85);
+
+    &--active {
+        display: block;
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        border: 1px solid transparent;
+        background: none;
+        cursor: pointer;
+        color: #fff;
+        z-index: 1982;
+
+        svg {
+            width: 50px;
+            height: 50px;
         }
     }
 }

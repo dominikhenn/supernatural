@@ -21,7 +21,12 @@
     <meta property="article:author" content="https://www.facebook.com/supernaturalmusicband/" />
     <meta property="og:image" content="https://www.supernatural-music.de/img/sn-logo.png" />
     <link rel="icon" type="image/png" href="img/favicon.ico">
-    <link href="css/layout.min.css" type="text/css" rel="stylesheet">
+    <link rel="preload" as="image" href="img/dom.png">
+    <link rel="preload" as="image" href="img/basti.png">
+    <link rel="preload" as="image" href="img/jaycomic.png">
+    <link rel="preload" as="image" href="img/carsten.png">
+    <link rel="preload" as="image" href="img/andre.png">
+    <link href="css/layout.min.css?v=202305121200" type="text/css" rel="stylesheet">
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
@@ -185,10 +190,172 @@
             <div class="content-overlay__entry content-overlay__entry--info">
                 <h3>Info</h3>
                 <p>Supernatural Music - Die Coverband aus dem Oberbergischen Engelskirchen spielt das Beste an Rock und Pop aus den 80ern bis Heute und weiß dabei mit gutem Sound auf der Bühne zu überzeugen.</p>
+                <p><img class="content-text-img" loading="lazy" alt="Supernatual Band Foto" src="img/band.jpeg" /></p>
                 <p>Die Band besteht aus Andre Berner - Gesang und Keyboard, Basti Lenz - Schlagzeug, Carsten Barf - Rhythmus Gitarre, Jörn "Jay" Burprich - Bass und Dominik Henn - Lead Gitarre.</p>
                 <p>Neben bekannten Rock Klassikern von Survivor oder AC/DC sind auch neuere Songs von Adam Lambert und Rag’n’Bone Man mit im Programm. Durch die regionale Nähe darf natürlich die Kölsche Mundart nicht fehlen und so finden sich auch Songs wie “Verdamp lang her” oder “Et jitt kei Wood” im Repertoir.</p>
                 <p>Gegründet wurde Supernatural bereits im Jahr 2011 und auch wenn von den Gründungsmitgliedern nicht mehr alle mit an Bord sind, steht doch eines immer im Vordergrund: Freundschaft und Spaß an der Musik.</p>
                 <p>Live Sehen und Hören konnte man Supernatural bisher auf unzähligen Kneipen-Konzerten, Schützenfesten oder auch auf der Ründerother Maikirmes.</p>
+            </div>
+            <div class="content-overlay__entry content-overlay__entry--events">
+                <h3>Termine</h3>
+                <div>
+                    <div class="event-separator"><div class="event-separator__content">2023</div></div>
+                    <div class="event">
+                        <div class="event__date-circle">
+                            <div class="event__date-circle-month">Jan</div>
+                            <div class="event__date-circle-day">28</div>
+                        </div>
+                        <div class="event__info">
+                            <h3 class="event__info-headline">Privatparty</h3>
+                            <div class="event__info-content">19:30 Uhr, 2T Brauhaus, Lindlar</div>
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="event__date-circle">
+                            <div class="event__date-circle-month">Mai</div>
+                            <div class="event__date-circle-day">31</div>
+                        </div>
+                        <div class="event__info">
+                            <h3 class="event__info-headline">Geburtstagsparty</h3>
+                            <div class="event__info-content">20:00 Uhr, Remerscheid</div>
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="event__date-circle">
+                            <div class="event__date-circle-month">Jul</div>
+                            <div class="event__date-circle-day">06</div>
+                        </div>
+                        <div class="event__info">
+                            <h3 class="event__info-headline">Privatveranstaltung</h3>
+                            <div class="event__info-content">18:00 Uhr</div>
+                        </div>
+                    </div>
+                    <div class="event-separator"><div class="event-separator__content">2022</div></div>
+                    <div class="event">
+                        <div class="event__date-circle">
+                            <div class="event__date-circle-month">Jun</div>
+                            <div class="event__date-circle-day">04</div>
+                        </div>
+                        <div class="event__info">
+                            <h3 class="event__info-headline">Schützenfest Lindlar Altenrath</h3>
+                            <div class="event__info-content">20:00 Uhr, Lindlar</div>
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="event__date-circle">
+                            <div class="event__date-circle-month">Jun</div>
+                            <div class="event__date-circle-day">18</div>
+                        </div>
+                        <div class="event__info">
+                            <h3 class="event__info-headline">JGV Ringen-Bölingen</h3>
+                            <div class="event__info-content">20:00 Uhr, Grafschaft</div>
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="event__date-circle">
+                            <div class="event__date-circle-month">Aug</div>
+                            <div class="event__date-circle-day">20</div>
+                        </div>
+                        <div class="event__info">
+                            <h3 class="event__info-headline">Sommerfest Abenteuerwerkstatt e.V.</h3>
+                            <div class="event__info-content">19:00 Uhr, Derschlag</div>
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="event__date-circle">
+                            <div class="event__date-circle-month">Sep</div>
+                            <div class="event__date-circle-day">24</div>
+                        </div>
+                        <div class="event__info">
+                            <h3 class="event__info-headline">Klangräume Lindlar</h3>
+                            <div class="event__info-content">18:00 Uhr, 2T Brauhaus, Lindlar</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-overlay__entry content-overlay__entry--gallery">
+                <h3>Bilder</h3>
+                <div class="gallery">
+                    <img onclick="showGalleryDetails(this)" class="gallery-img" loading="lazy" alt="Supernatual Band Foto 3" src="img/gallery/gallery3.JPG" />
+                    <img onclick="showGalleryDetails(this)" class="gallery-img" loading="lazy" alt="Supernatual Band Foto 1" src="img/gallery/gallery1.JPG" />
+                    <img onclick="showGalleryDetails(this)" class="gallery-img" loading="lazy" alt="Supernatual Band Foto 2" src="img/gallery/gallery2.JPG" />
+                    <img onclick="showGalleryDetails(this)" class="gallery-img" loading="lazy" alt="Supernatual Band Foto 4" src="img/gallery/gallery4.JPG" />
+                    <img onclick="showGalleryDetails(this)" class="gallery-img" loading="lazy" alt="Supernatual Band Foto 5" src="img/gallery/gallery5.JPG" />
+                    <img onclick="showGalleryDetails(this)" class="gallery-img" loading="lazy" alt="Supernatual Band Foto 6" src="img/gallery/gallery6.jpg" />
+                </div>
+            </div>
+            <div class="content-overlay__entry content-overlay__entry--songs">
+                <h3>Songs</h3>
+                <div>
+                    <div class="track">
+                        <div class="track__play" onclick="playAudioTrack(4)">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+                                <title>Song abspielen</title>
+                                <path class="st0" d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M8,15.1c-3.9,0-7.2-3.2-7.2-7.1S4.1,0.9,8,0.9 s7.1,3.2,7.1,7.2S11.9,15.1,8,15.1z M6,4.5L12,8l-6,3.5V4.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="track__info">
+                            <h3 class="track__info-headline">Here i go again</h3>
+                            <div class="track__info-content">
+                                Whitesnake Cover, Proberaum Mitschnitt
+                                <div id="track-container-4" class="track__info-content-audio">
+                                    <audio controls="controls" id="track-4" preload="none" controlslist="nodownload" alt="Here i go again"><source src="/mp3/here-i-go-again.mp3">Your browser does not support the audio tag.</audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="track">
+                        <div class="track__play" onclick="playAudioTrack(1)">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+                                <title>Song abspielen</title>
+                                <path class="st0" d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M8,15.1c-3.9,0-7.2-3.2-7.2-7.1S4.1,0.9,8,0.9 s7.1,3.2,7.1,7.2S11.9,15.1,8,15.1z M6,4.5L12,8l-6,3.5V4.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="track__info">
+                            <h3 class="track__info-headline">Creep</h3>
+                            <div class="track__info-content">
+                                Radiohead Cover, Proberaum Mitschnitt
+                                <div id="track-container-1" class="track__info-content-audio">
+                                    <audio controls="controls" id="track-1" preload="none" controlslist="nodownload" alt="Creep"><source src="/mp3/creep.mp3">Your browser does not support the audio tag.</audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="track">
+                        <div class="track__play" onclick="playAudioTrack(2)">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+                                <title>Song abspielen</title>
+                                <path class="st0" d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M8,15.1c-3.9,0-7.2-3.2-7.2-7.1S4.1,0.9,8,0.9 s7.1,3.2,7.1,7.2S11.9,15.1,8,15.1z M6,4.5L12,8l-6,3.5V4.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="track__info">
+                            <h3 class="track__info-headline">All you ever wanted</h3>
+                            <div class="track__info-content">
+                                Rag’n’Bone Man Cover, Proberaum Mitschnitt
+                                <div id="track-container-2" class="track__info-content-audio">
+                                    <audio controls="controls" id="track-2" preload="none" controlslist="nodownload" alt="All you ever wanted"><source src="/mp3/all-you-ever-wanted.mp3">Your browser does not support the audio tag.</audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="track">
+                        <div class="track__play" onclick="playAudioTrack(3)">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+                                <title>Song abspielen</title>
+                                <path class="st0" d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M8,15.1c-3.9,0-7.2-3.2-7.2-7.1S4.1,0.9,8,0.9 s7.1,3.2,7.1,7.2S11.9,15.1,8,15.1z M6,4.5L12,8l-6,3.5V4.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="track__info">
+                            <h3 class="track__info-headline">Purple rain</h3>
+                            <div class="track__info-content">
+                                Prince Cover, Proberaum Mitschnitt
+                                <div id="track-container-3" class="track__info-content-audio">
+                                    <audio controls="controls" id="track-3" preload="none" controlslist="nodownload" alt="Purple rain"><source src="/mp3/purpel-rain.mp3">Your browser does not support the audio tag.</audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="content-overlay__entry content-overlay__entry--contact">
                 <h3>Kontakt</h3>
@@ -228,6 +395,9 @@
             </div>
         </div>
     </div>
+    <div class="contact-icon" onclick="openContent('contact')">
+        <img alt="Kontakt" src="img/contact.png" />
+    </div>
     <div class="sidebar">
         <div class="sidebar__backdrop"></div>
         <div class="sidebar__wrapper">
@@ -252,6 +422,21 @@
                             </a>
                         </li>
                         <li>
+                            <a href="javascript:openContent('events')">
+                                Termine
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:openContent('gallery')">
+                                Bilder
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:openContent('songs')">
+                                Songs
+                            </a>
+                        </li>
+                        <li>
                             <a href="javascript:openContent('contact')">
                                 Kontakt
                             </a>
@@ -266,128 +451,14 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-      function ready(fn) {
-        if (document.readyState !== 'loading'){
-          fn();
-        } else {
-          document.addEventListener('DOMContentLoaded', fn);
-        }
-      }
-
-      function thunderstorm() {
-        document.getElementById('bg').classList.add('on');
-
-        window.setTimeout(function () {
-          document.getElementById('bg').classList.remove('on');
-
-          window.setTimeout(function () {
-            document.getElementById('bg').classList.add('on');
-
-            window.setTimeout(function () {
-              document.getElementById('bg').classList.remove('on');
-
-              window.setTimeout(function () {
-                document.getElementById('bg').classList.add('on-long');
-
-                window.setTimeout(function () {
-                  document.getElementById('bg').classList.remove('on-long');
-                }, 500);
-              }, 100);
-            }, 100);
-          }, 100);
-        }, 100);
-      }
-
-      function showMemberDetails(member) {
-        document.getElementById('member').className = 'member';
-
-        document.getElementById('member').classList.add('show-member');
-        document.getElementById('member').classList.add(member);
-      }
-
-      function hideMemberDetails() {
-        document.getElementById('member').className = 'member';
-      }
-
-      function toggleMenu() {
-        closeContent();
-        document.getElementsByClassName('sidebar')[0].classList.toggle('sidebar--active');
-      }
-
-      function closeMenu() {
-        document.getElementsByClassName('sidebar')[0].classList.remove('sidebar--active');
-      }
-
-      function openContent(type) {
-        closeMenu();
-        document.querySelector('.content-overlay__entry--' + type).classList.add('content-overlay__entry--active');
-        document.querySelector('.content-overlay').classList.add('content-overlay--active');
-      }
-
-      function closeContent() {
-        document.querySelector('.content-overlay').classList.remove('content-overlay--active');
-
-        setTimeout(function () {
-          var entries = document.querySelectorAll('.content-overlay__entry');
-
-          for (var i = 0; i < entries.length; i++) {
-            entries[i].classList.remove('content-overlay__entry--active');
-          }
-        }, 500);
-      }
-
-      function closeAll() {
-        hideMemberDetails();
-        closeMenu();
-        closeContent();
-      }
-
-      function generateMailToLink(pre, post) {
-        window.location.href = 'mailto:' + pre + '@' + post;
-      }
-
-      ready(function () {
-        window.setTimeout(function () {
-          document.getElementById('content').classList.add('on');
-
-          window.setTimeout(function () {
-            document.getElementById('content').classList.remove('on');
-
-            window.setTimeout(function () {
-              document.getElementById('content').classList.add('on');
-
-              window.setTimeout(function () {
-                document.getElementById('content').classList.remove('on');
-
-                window.setTimeout(function () {
-                  document.getElementById('content').classList.add('on');
-
-                  window.setTimeout(function () {
-                    document.getElementById('content').classList.remove('on');
-
-                    window.setTimeout(function () {
-                      document.getElementById('content').classList.add('on');
-                    }, 50);
-                  }, 50);
-                }, 50);
-              }, 50);
-            }, 50);
-          }, 50);
-        }, 1500);
-
-        window.setTimeout(function () {
-          thunderstorm();
-        }, 5000);
-
-        window.setInterval(function () {
-          thunderstorm();
-        }, 20000);
-
-        window.setTimeout(function () {
-          document.getElementById('content').classList.add('loaded');
-        }, 100);
-      });
-    </script>
+    <div class="gallery-detail">
+        <button class="gallery-detail__close-btn" aria-label="Close details" type="button" onclick="hideGalleryDetails()">
+            <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="times" class="svg-inline--fa" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <title>Close details</title>
+                <path fill="currentColor" d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z"></path>
+            </svg>
+        </button>
+    </div>
+    <script src="/js/main.js?v=20230512"></script>
 </body>
 </html>
