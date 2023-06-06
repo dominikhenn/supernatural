@@ -83,15 +83,106 @@ function playAudioTrack(key) {
     document.getElementById('track-' + key).play();
 }
 
-function showGalleryDetails(img) {
+function initializeImageGallery() {
+    window.imageGallery = {
+        images: document.querySelectorAll('img.gallery-img'),
+        currentImageIndex: -1,
+        touchEvent: {
+            swipeDir: 'none',
+            startX: 0,
+            startY: 0,
+            distX: 0,
+            distY: 0,
+            startTime: 0
+        }
+    };
+
+    window.imageGallery.images.forEach(function (item, index) {
+        item.onclick = function () {
+            showGalleryDetails(item, index);
+        }
+    });
+}
+
+function showGalleryDetails(img, index) {
     var detailContainer = document.querySelector('.gallery-detail');
     detailContainer.style.backgroundImage = 'url("' + img.src + '")';
     detailContainer.style.display = 'block';
+
+    window.imageGallery.currentImageIndex = index;
+
+    document.addEventListener('keyup', handleGalleryNavigation, false);
+    document.addEventListener('touchstart', handleTouchStart, false);
+    document.addEventListener('touchmove', handleTouchMove, false);
+    document.addEventListener('touchend', handleTouchEnd, false);
 }
 
 function hideGalleryDetails() {
+    window.imageGallery.currentImageIndex = -1;
+
+    document.removeEventListener('keyup', handleGalleryNavigation, false);
+    document.removeEventListener('touchstart', handleTouchStart, false);
+    document.removeEventListener('touchmove', handleTouchMove, false);
+    document.removeEventListener('touchend', handleTouchEnd, false);
+
     var detailContainer = document.querySelector('.gallery-detail');
     detailContainer.style.display = 'none';
+}
+
+function handleGalleryNavigation(event) {
+    if (event.code === 'Escape') {
+        hideGalleryDetails();
+    }
+    if (event.code === 'ArrowRight') {
+        if (window.imageGallery.images[window.imageGallery.currentImageIndex + 1]) {
+            showGalleryDetails(window.imageGallery.images[window.imageGallery.currentImageIndex + 1], window.imageGallery.currentImageIndex + 1);
+        } else {
+            showGalleryDetails(window.imageGallery.images[0], 0);
+        }
+    }
+    if (event.code === 'ArrowLeft') {
+        if (window.imageGallery.images[window.imageGallery.currentImageIndex - 1]) {
+            showGalleryDetails(window.imageGallery.images[window.imageGallery.currentImageIndex - 1], window.imageGallery.currentImageIndex - 1);
+        } else {
+            var lastImageIndex = window.imageGallery.images.length - 1;
+            showGalleryDetails(window.imageGallery.images[lastImageIndex], lastImageIndex);
+        }
+    }
+}
+
+function handleTouchStart(event) {
+    var touchObj = event.changedTouches[0];
+    window.imageGallery.touchEvent.swipeDir = 'none';
+    window.imageGallery.touchEvent.distX = 0;
+    window.imageGallery.touchEvent.distY = 0;
+    window.imageGallery.touchEvent.startX = touchObj.pageX;
+    window.imageGallery.touchEvent.startY = touchObj.pageY;
+    window.imageGallery.touchEvent.startTime = new Date().getTime();
+    // event.preventDefault();
+}
+
+function handleTouchMove(event) {
+    // event.preventDefault();
+}
+
+function handleTouchEnd(event) {
+    var touchObj = event.changedTouches[0];
+    var elapsedTime = new Date().getTime() - window.imageGallery.touchEvent.startTime;
+    window.imageGallery.touchEvent.distX = touchObj.pageX - window.imageGallery.touchEvent.startX;
+    window.imageGallery.touchEvent.distY = touchObj.pageY - window.imageGallery.touchEvent.startY;
+
+    if (elapsedTime <= 300) {
+        if (Math.abs(window.imageGallery.touchEvent.distX) >= 150 && Math.abs(window.imageGallery.touchEvent.distY) <= 100) {
+            window.imageGallery.touchEvent.swipeDir = (window.imageGallery.touchEvent.distX < 0) ? 'ArrowLeft' : 'ArrowRight';
+        }
+        else if (Math.abs(window.imageGallery.touchEvent.distY) >= 150 && Math.abs(window.imageGallery.touchEvent.distX) <= 100) {
+            window.imageGallery.touchEvent.swipeDir = (window.imageGallery.touchEvent.distY < 0) ? 'Up' : 'Escape';
+        }
+    }
+
+    handleGalleryNavigation({code: window.imageGallery.touchEvent.swipeDir});
+
+    // event.preventDefault();
 }
 
 ready(function () {
@@ -121,6 +212,8 @@ ready(function () {
                 }, 50);
             }, 50);
         }, 50);
+
+        initializeImageGallery();
     }, 1500);
 
     window.setTimeout(function () {
