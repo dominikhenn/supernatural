@@ -185,6 +185,14 @@ function handleTouchEnd(event) {
     // event.preventDefault();
 }
 
+function openPastEvents() {
+    document.querySelector('.past-events__content').classList.toggle('past-events__content--open');
+
+    window.setTimeout(function () {
+        document.querySelector('.past-events__content').scrollIntoView({behavior: 'smooth'})
+    }, 100);
+}
+
 ready(function () {
     window.setTimeout(function () {
         document.getElementById('content').classList.add('on');

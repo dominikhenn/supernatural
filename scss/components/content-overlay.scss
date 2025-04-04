@@ -1,3 +1,5 @@
+@use "../variables";
+
 .content-overlay {
     position: fixed;
     top: 110px;
@@ -8,9 +10,9 @@
     background-color: rgba(0, 0, 0, 0.7);
     transition: transform 250ms ease-in-out;
     transform: translateX(100%);
-    border-top: 1px solid $tertiary-color;
+    border-top: 1px solid variables.$tertiary-color;
 
-    @include landscape-up {
+    @include variables.landscape-up {
         top: 145px;
     }
 
@@ -18,15 +20,15 @@
         top: 105px;
     }
 
-    @include tablet-up {
+    @include variables.tablet-up {
         top: 165px;
     }
 
-    @include desktop-up {
+    @include variables.desktop-up {
         top: 185px;
     }
 
-    @include very-big-desktop-up {
+    @include variables.very-big-desktop-up {
         top: 235px;
     }
 
@@ -37,31 +39,31 @@
     &__entry {
         display: none;
         padding: 20px;
-        color: $tertiary-color;
+        color: variables.$tertiary-color;
         overflow-y: scroll;
         height: calc(100% - 120px);
-        @include hide-scrollbars;
+        @include variables.hide-scrollbars;
 
-        @include landscape-up {
+        @include variables.landscape-up {
             height: calc(100% - 155px);
         }
 
-        @include tablet-up {
+        @include variables.tablet-up {
             height: calc(100% - 175px);
         }
 
-        @include desktop-up {
+        @include variables.desktop-up {
             height: calc(100% - 195px);
             max-width: 900px;
             margin: 0 auto;
         }
 
-        @include very-big-desktop-up {
+        @include variables.very-big-desktop-up {
             height: calc(100% - 245px);
         }
 
         a, a:visited, a:active {
-            color: $tertiary-color;
+            color: variables.$tertiary-color;
         }
 
         &--active {
@@ -72,7 +74,7 @@
             border-radius: 5px;
             margin: 0 auto;
 
-            @include desktop-up {
+            @include variables.desktop-up {
                 max-width: calc(100% - 60px);
             }
         }
@@ -140,6 +142,29 @@
     }
 }
 
+.past-events {
+    margin: 50px 0 30px;
+
+    &__headline {
+        cursor: pointer;
+        font-size: 20px;
+
+        &:hover {
+            text-shadow: 1px 4px 4px orangered;
+        }
+    }
+
+    &__content {
+        max-height: 0;
+        transition: max-height ease-in-out 500ms;
+        overflow: hidden;
+
+        &--open {
+            max-height: 4000px;
+        }
+    }
+}
+
 .track {
     display: flex;
     justify-items: flex-start;
@@ -197,7 +222,7 @@
         }
     }
 
-    @include tablet-up {
+    @include variables.tablet-up {
         column-gap: 20px;
         grid-template-columns: 1fr 1fr
     }

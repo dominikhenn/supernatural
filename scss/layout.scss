@@ -1,7 +1,7 @@
-@import './variables';
-@import './_fonts';
-@import './components/menu';
-@import './components/content-overlay';
+@use 'variables';
+@use '_fonts';
+@use 'components/menu';
+@use 'components/content-overlay';
 
 *, *::before, *::after {
     box-sizing: inherit;
@@ -12,12 +12,12 @@ body {
     font-family: "Helvetica", "Arial", sans-serif;
     font-size: 18px;
     text-rendering: optimizeLegibility;
-    background: $secondary-color;
-    color: $text-color;
+    background: variables.$secondary-color;
+    color: variables.$text-color;
     position: fixed;
     height: 100%;
 
-    @include desktop-up {
+    @include variables.desktop-up {
         position: initial;
     }
 }
@@ -25,7 +25,7 @@ body {
 a,
 a:visited,
 a:active {
-    color: $primary-color;
+    color: variables.$primary-color;
 }
 
 ul, ol {
@@ -39,23 +39,23 @@ h1,h2,h3,h4,h5,h6 {
 
 h2 {
     font-family: "Mr Dafoe", sans-serif;
-    color: $primary-color;
+    color: variables.$primary-color;
     font-size: 50px;
-    text-shadow: 1px 1px 2px $tertiary-color;
+    text-shadow: 1px 1px 2px variables.$tertiary-color;
 
-    @include tablet-up {
+    @include variables.tablet-up {
         font-size: 60px;
     }
 
-    @include desktop-up {
+    @include variables.desktop-up {
         font-size: 70px;
     }
 
-    @include big-desktop-up {
+    @include variables.big-desktop-up {
         font-size: 90px;
     }
 
-    @include very-big-desktop-up {
+    @include variables.very-big-desktop-up {
         font-size: 100px;
     }
 }
@@ -124,7 +124,7 @@ img {
     cursor: pointer;
     overflow: hidden;
 
-    @include desktop-up {
+    @include variables.desktop-up {
         bottom: calc(50dvh - 57px);
     }
 
@@ -134,7 +134,7 @@ img {
         position: relative;
         right: -70px;
 
-        @include tablet-up {
+        @include variables.tablet-up {
             height: 114px;
         }
     }
@@ -143,7 +143,7 @@ img {
         img {
             right: -12px;
 
-            @include tablet-up {
+            @include variables.tablet-up {
                 right: -18px;
             }
 
@@ -155,7 +155,7 @@ img {
 }
 
 .container {
-    max-width: $max-width;
+    max-width: variables.$max-width;
     margin-left: auto;
     margin-right: auto;
     padding: 0 16px;
@@ -169,7 +169,7 @@ img {
 .logo {
     margin: 50px 0 0 0;
 
-    @include very-big-desktop-up {
+    @include variables.very-big-desktop-up {
         margin: 100px 0 0 0;
     }
 
@@ -197,24 +197,24 @@ img {
     opacity: 0;
     transition: opacity 1s ease-in-out;
 
-    @include landscape-up {
+    @include variables.landscape-up {
         height: calc(100vh - 100px - 164px);
     }
 
-    @include tablet-up {
+    @include variables.tablet-up {
         height: calc(100vh - 120px - 164px);
     }
 
-    @include desktop-up {
+    @include variables.desktop-up {
         height: calc(100vh - 160px - 194px);
     }
 
-    @include big-desktop-up {
+    @include variables.big-desktop-up {
         height: calc(100vh - 160px - 194px);
         margin-left: 75px;
     }
 
-    @include very-big-desktop-up {
+    @include variables.very-big-desktop-up {
         height: calc(100vh - 180px - 304px);
         margin-left: 115px;
     }
@@ -249,11 +249,11 @@ img {
         right: 0;
         top: calc(50vh - 105px - 153px + 60px);
 
-        @include landscape-up {
+        @include variables.landscape-up {
             top: calc(50vh - 105px - 153px + 80px);
         }
 
-        @include tablet-up {
+        @include variables.tablet-up {
             top: calc(50vh - 105px - 153px + 10px);
         }
     }
@@ -286,11 +286,11 @@ img {
             left: -35px;
         }
 
-        @include landscape-up {
+        @include variables.landscape-up {
             top: calc(50vh - 100px - 164px);
         }
 
-        @include tablet-up {
+        @include variables.tablet-up {
             top: calc(50vh - 120px - 200px);
             height: 350px;
 
@@ -315,7 +315,7 @@ img {
             }
         }
 
-        @include desktop-up {
+        @include variables.desktop-up {
             top: calc(50vh - 180px - 194px);
             height: 400px;
 
@@ -340,7 +340,7 @@ img {
             }
         }
 
-        @include big-desktop-up {
+        @include variables.big-desktop-up {
             top: calc(50vh - 200px - 194px);
             height: 450px;
 
@@ -365,7 +365,7 @@ img {
             }
         }
 
-        @include very-big-desktop-up {
+        @include variables.very-big-desktop-up {
             top: calc(50vh - 180px - 304px);
             height: 500px;
 
@@ -403,27 +403,27 @@ img {
         cursor: pointer;
 
         &:hover {
-            text-shadow: 2px 2px 5px $tertiary-color;
+            text-shadow: 2px 2px 5px variables.$tertiary-color;
         }
     }
 
-    @include landscape-up {
+    @include variables.landscape-up {
         height: 120px;
     }
 
-    @include tablet-up {
+    @include variables.tablet-up {
         height: 120px;
     }
 
-    @include desktop-up {
+    @include variables.desktop-up {
         height: 160px;
     }
 
-    @include big-desktop-up {
+    @include variables.big-desktop-up {
         margin-left: 75px;
     }
 
-    @include very-big-desktop-up {
+    @include variables.very-big-desktop-up {
         margin-left: 125px;
         height: 180px;
     }
@@ -458,7 +458,7 @@ img {
             left: 5px;
         }
 
-        @include landscape-up {
+        @include variables.landscape-up {
             &.d {
                 top: 6px;
                 left: 517px;
@@ -484,7 +484,7 @@ img {
             }
         }
 
-        @include tablet-up {
+        @include variables.tablet-up {
             &.d {
                 top: 4px;
                 left: 606px;
@@ -510,7 +510,7 @@ img {
             }
         }
 
-        @include desktop-up {
+        @include variables.desktop-up {
             &.d {
                 top: 4px;
                 left: 815px;
@@ -536,7 +536,7 @@ img {
             }
         }
 
-        @include big-desktop-up {
+        @include variables.big-desktop-up {
             &.d {
                 top: 4px;
                 left: 935px;
@@ -562,7 +562,7 @@ img {
             }
         }
 
-        @include very-big-desktop-up {
+        @include variables.very-big-desktop-up {
             &.d {
                 top: 10px;
                 left: 1005px;
@@ -620,7 +620,7 @@ img {
             left: -15px;
         }
 
-        @include landscape-up {
+        @include variables.landscape-up {
             &.d {
                 left: 410px;
             }
@@ -642,7 +642,7 @@ img {
             }
         }
 
-        @include tablet-up {
+        @include variables.tablet-up {
             &.d {
                 left: 430px;
             }
@@ -664,7 +664,7 @@ img {
             }
         }
 
-        @include desktop-up {
+        @include variables.desktop-up {
             &.d {
                 left: 564px;
             }
@@ -686,7 +686,7 @@ img {
             }
         }
 
-        @include big-desktop-up {
+        @include variables.big-desktop-up {
             &.d {
                 left: 640px;
             }
@@ -708,7 +708,7 @@ img {
             }
         }
 
-        @include very-big-desktop-up {
+        @include variables.very-big-desktop-up {
             &.d {
                 left: 700px;
             }
@@ -746,7 +746,7 @@ img {
     .member__img.d {
         left: 0;
 
-        @include tablet-up {
+        @include variables.tablet-up {
             left: 20px;
         };
     }

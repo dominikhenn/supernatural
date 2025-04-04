@@ -1,3 +1,5 @@
+@use "../variables";
+
 .menu-toggle {
     z-index: 1;
     position: absolute;
@@ -6,11 +8,11 @@
 
     .button__icon {
         font-size: 26px;
-        color: $tertiary-color;
+        color: variables.$tertiary-color;
         cursor: pointer;
     }
 
-    @include big-desktop-up {
+    @include variables.big-desktop-up {
         .button__icon {
             font-size: 38px;
         }
@@ -63,7 +65,7 @@
 
         .button__icon {
             font-size: 24px;
-            color: $tertiary-color;
+            color: variables.$tertiary-color;
             margin-right: 16px;
             cursor: pointer;
         }
@@ -85,7 +87,7 @@
             margin-bottom:50px;
 
             &-title {
-                color: $tertiary-color;
+                color: variables.$tertiary-color;
                 text-transform: uppercase;
                 font-weight: bold;
                 font-size: 18px;
@@ -106,13 +108,13 @@
                 transition: all ease-in-out 150ms;
 
                 & a {
-                    color: $tertiary-color;
+                    color: variables.$tertiary-color;
                     text-decoration: none;
                     padding: 20px 20px;
                     display:block;
 
                     &.active {
-                        color: $primary-color;
+                        color: variables.$primary-color;
                         font-weight: bold;
                     }
                 }
@@ -135,7 +137,7 @@
         display: block;
         margin-bottom: 25px;
         font-weight: bold;
-        color: $gray-color;
+        color: variables.$gray-color;
         text-decoration: none;
     }
 }

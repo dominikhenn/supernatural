@@ -4,13 +4,13 @@
   "description": "Landingpage",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node-sass --include-path scss scss/layout.scss css/layout.min.css --output-style compressed",
+    "build": "sass --load-path scss scss/layout.scss css/layout.min.css --style compressed",
     "watch": "nodemon -e scss -x \"npm run build\""
   },
   "author": "Dominik Henn",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^8.0",
-    "nodemon": "^2.0"
+    "nodemon": "^2.0.7",
+    "sass": "^1.72.0"
   }
 }
