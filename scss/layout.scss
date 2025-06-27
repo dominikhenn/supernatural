@@ -112,7 +112,11 @@ img {
     svg {
         height: 30px;
         width: 30px;
-        margin: 16px 16px 16px 0;
+        margin: 16px 4px 16px 0;
+
+        &.last-social-icon {
+            margin: 16px 16px 16px 0;
+        }
     }
 }
 
