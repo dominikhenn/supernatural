@@ -31,6 +31,10 @@ a:active {
 ul, ol {
     margin: 0;
     padding-left: 0;
+
+  li {
+    margin-left: 20px;
+  }
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -118,6 +122,18 @@ img {
             margin: 16px 16px 16px 0;
         }
     }
+
+  &--info {
+    position: relative;
+
+    a {
+      font-size: 0;
+    }
+
+    svg {
+      margin: 16px 16px 16px 0;
+    }
+  }
 }
 
 .contact-icon {
